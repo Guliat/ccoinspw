@@ -15,12 +15,12 @@ class CreateTradesTable extends Migration
     {
         Schema::create('trades', function (Blueprint $table) {
             $table->id();
-            $table->unsignedTinyInteger('exchange_id');
-            $table->unsignedTinyInteger('coin_id');
+            $table->unsignedSmallInteger('exchange_id');
+            $table->unsignedSmallInteger('coin_id');
             $table->decimal('quantity', 16, 8);
             $table->decimal('open_price', 13, 6)->nullable();
-            $table->decimal('close_price', 13, 6)->nullable();
-            $table->unsignedTinyInteger('is_active')->default('1');
+            $table->decimal('closed_price', 13, 6)->nullable();
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
     }

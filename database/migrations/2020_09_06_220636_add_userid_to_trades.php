@@ -14,7 +14,7 @@ class AddUseridToTrades extends Migration
     public function up()
     {
         Schema::table('trades', function (Blueprint $table) {
-            $table->unsignedInteger('user_id')->after('id');
+            $table->unsignedBigInteger('user_id')->after('id');
         });
     }
 

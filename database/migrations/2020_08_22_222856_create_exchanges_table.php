@@ -16,7 +16,7 @@ class CreateExchangesTable extends Migration
         Schema::create('exchanges', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique();
-            $table->unsignedTinyInteger('is_active')->default('1');
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
     }

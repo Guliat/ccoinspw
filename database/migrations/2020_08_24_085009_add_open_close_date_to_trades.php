@@ -15,7 +15,7 @@ class AddOpenCloseDateToTrades extends Migration
     {
         Schema::table('trades', function (Blueprint $table) {
             $table->dateTime('open_at', 0)->after('open_price')->nullable();
-            $table->dateTime('close_at', 0)->after('close_price')->nullable();
+            $table->dateTime('closed_at', 0)->after('closed_price')->nullable();
         });
     }
 
@@ -28,7 +28,7 @@ class AddOpenCloseDateToTrades extends Migration
     {
         Schema::table('trades', function (Blueprint $table) {
             $table->dropColumn('open_at');
-            $table->dropColumn('close_at');
+            $table->dropColumn('closed_at');
         });
     }
 }

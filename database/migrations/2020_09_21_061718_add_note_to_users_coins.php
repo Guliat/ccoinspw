@@ -13,7 +13,7 @@ class AddNoteToUsersCoins extends Migration
      */
     public function up()
     {
-        Schema::table('users_coins', function (Blueprint $table) {
+        Schema::table('coin_user', function (Blueprint $table) {
             $table->text('note')->after('is_active')->nullable();
         });
     }
@@ -25,7 +25,7 @@ class AddNoteToUsersCoins extends Migration
      */
     public function down()
     {
-        Schema::table('users_coins', function (Blueprint $table) {
+        Schema::table('coin_user', function (Blueprint $table) {
             $table->dropColumn('note');
         });
     }

@@ -14,7 +14,7 @@ class AddCloseQuantityToTrades extends Migration
     public function up()
     {
         Schema::table('trades', function (Blueprint $table) {
-            $table->decimal('close_quantity', 16, 8)->nullable()->after('open_at');
+            $table->decimal('closed_quantity', 16, 8)->nullable()->after('open_at');
         });
     }
 
@@ -26,7 +26,7 @@ class AddCloseQuantityToTrades extends Migration
     public function down()
     {
         Schema::table('trades', function (Blueprint $table) {
-            $table->dropColumn('close_quantity');
+            $table->dropColumn('closed_quantity');
         });
     }
 }

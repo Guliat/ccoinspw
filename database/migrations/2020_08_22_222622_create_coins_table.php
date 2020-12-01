@@ -18,7 +18,7 @@ class CreateCoinsTable extends Migration
             $table->string('symbol')->unique();
             $table->string('name')->unique();
             $table->string('api_link')->unique();
-            $table->unsignedTinyInteger('is_active')->default('1');
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
     }

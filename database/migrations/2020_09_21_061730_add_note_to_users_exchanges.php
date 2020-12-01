@@ -13,7 +13,7 @@ class AddNoteToUsersExchanges extends Migration
      */
     public function up()
     {
-        Schema::table('users_exchanges', function (Blueprint $table) {
+        Schema::table('exchange_user', function (Blueprint $table) {
             $table->text('note')->after('is_active')->nullable();
         });
     }
@@ -25,7 +25,7 @@ class AddNoteToUsersExchanges extends Migration
      */
     public function down()
     {
-        Schema::table('users_exchanges', function (Blueprint $table) {
+        Schema::table('exchange_user', function (Blueprint $table) {
             $table->dropColumn('note');
         });
     }

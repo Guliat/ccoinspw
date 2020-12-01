@@ -14,7 +14,7 @@ class AddBitcoinPriceBitcoinQantityToTrades extends Migration
     public function up()
     {
         Schema::table('trades', function (Blueprint $table) {
-            $table->decimal('bitcoin_quantity', 16, 8)->nullable()->after('close_at');
+            $table->decimal('bitcoin_quantity', 16, 8)->nullable()->after('closed_at');
             $table->decimal('bitcoin_price', 13, 6)->nullable()->after('bitcoin_quantity');
         });
     }
