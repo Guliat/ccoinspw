@@ -12,6 +12,17 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
+
+    public function activeCoins()
+    {
+        return $this->belongsToMany('App\Models\Coin')->wherePivot('is_active', true)->withPivot('note')->withTimestamps();
+    }
+
+    public function activeExchanges()
+    {
+        return $this->belongsToMany('App\Models\Exchange')->wherePivot('is_active', true)->withPivot('note')->withTimestamps();
+    }
+
     use HasApiTokens;
     use HasFactory;
     use HasProfilePhoto;
