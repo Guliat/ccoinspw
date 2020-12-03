@@ -15,12 +15,12 @@ class User extends Authenticatable
 
     public function activeCoins()
     {
-        return $this->belongsToMany('App\Models\Coin')->wherePivot('is_active', true)->withPivot('note')->withTimestamps();
+        return $this->belongsToMany(Coin::class)->wherePivot('is_active', true)->withPivot('note')->withTimestamps();
     }
 
     public function activeExchanges()
     {
-        return $this->belongsToMany('App\Models\Exchange')->wherePivot('is_active', true)->withPivot('note')->withTimestamps();
+        return $this->belongsToMany(Exchange::class)->wherePivot('is_active', true)->withPivot('note')->withTimestamps();
     }
 
     use HasApiTokens;
