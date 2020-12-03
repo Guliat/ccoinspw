@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class DatabaseSeeder extends Seeder
+class TradesSeeder extends Seeder
 {
     /**
      * Seed the application's database.
@@ -14,14 +14,31 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+
+        for ($i = 1; $i < 6; $i++) {
+            DB::table('exchange_user')->insert([
+                'user_id' => 4,
+                'exchange_id' => $i,
+            ]);
+        }
+
+        for ($i = 1; $i < 11; $i++) {
+            DB::table('coin_user')->insert([
+                'user_id' => 4,
+                'coin_id' => $i,
+            ]);
+        }
+
+
         for ($i = 0; $i < 150; $i++) {
             DB::table('trades')->insert([
                 'user_id' => 4,
                 'exchange_id' => rand(1, 5),
-                'coin_id' => rand(1, 20),
+                'coin_id' => rand(1, 10),
                 'quantity' => rand(1, 100),
                 'open_price' => rand(1, 15000),
             ]);
         }
+
     }
 }
