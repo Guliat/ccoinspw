@@ -28,7 +28,7 @@ class TradeController extends Controller
 			$trade['paid'] = $calc->calculatePaid($trade->quantity, $trade->open_price);
 			$this->currentProfit += $trade['profit'] = $calc->calculateProfit($trade->quantity, $trade->coin->price, $trade->open_price);
 			$this->totalAvailable += $trade['available'] = $calc->calculateAvailable($trade->quantity, $trade->coin->price);
-			$this->totalQuantity +=  $trade->quantity;
+			$this->totalQuantity += $trade->quantity;
 			$newCollection->push($trade);
 		}
 
