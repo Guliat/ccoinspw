@@ -14,7 +14,7 @@
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
     <body  style="font-family: 'Nunito';">
-        <div class="min-h-screen bg-gray-100" >
+        <div class="min-h-screen bg-gray-100">
             @livewire('navigation-dropdown')
             <main>
                 {{ $slot }}

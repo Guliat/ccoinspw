@@ -1,5 +1,3 @@
 <x-app-layout>
-    <div class="py-12">
-        @livewire('trades')
-    </div>
+    @livewire('trades')
 </x-app-layout>
