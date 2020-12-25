@@ -86,8 +86,8 @@
 								${{ number_format(abs($trade->profit), 2, ',', ' ') }}
 							</div>
 							<div class="text-xs md:text-lg @if($trade->profit < 0) text-red-400 @else text-green-400 @endif"">{{ round(($trade->profit * 100) / $trade->paid, 2) }}%</div>
-							<a href="" class="flex justify-end">
-								<x-heroicon-s-chevron-down class="text-gray-300 h-6 w-6 -mr-1" />
+							<a href="" class="flex justify-end font-2xl">
+								...
 							</a>
 						</div>
 
