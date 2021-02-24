@@ -10,21 +10,21 @@
 					<div class="text-xl">
 					${{ number_format($total_available, 0, ',', ' ') }}
 					</div>
-					@if(2 == 1)
 					<div class="uppercase text-sm text-gray-300 mt-3">
-					quantity
+						active trades p / l
 					</div>
 					<div class="text-xl">
-					{{ $total_quantity }}
+						@if($current_profit < 0) <span class="text-xl">-</span> @endif
+						${{ number_format(abs($current_profit), 2, ',', ' ') }}
 					</div>
+					@if(!empty($selectedCoins) && (count($selectedCoins) == 1))
+						<div class="uppercase text-sm text-gray-300 mt-3">
+						quantity
+						</div>
+						<div class="text-xl">
+						{{ $total_quantity }}
+						</div>
 					@endif
-					<div class="uppercase text-sm text-gray-300 mt-3">
-					active trades p / l
-					</div>
-					<div class="text-xl">
-					@if($current_profit < 0) <span class="text-xl">-</span> @endif
-					${{ number_format(abs($current_profit), 2, ',', ' ') }}
-					</div>
 				</div>
 
 			</div>
